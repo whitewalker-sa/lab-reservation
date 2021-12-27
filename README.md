@@ -4,7 +4,7 @@ Author Mpho Louis Chauke
 
 Angular based Lab Booking System for lecturers and students
 
-![lab-reservation-system](https://user-images.githubusercontent.com/2020370/44951506-cdb5e980-ae83-11e8-8360-b04b7893ea32.jpg)
+![lab-reservation-system](https://github.com/whitewalker-sa/lab-reservation/blob/main/lab-reservation.png)
 
 
 ## Start Server

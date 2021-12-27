@@ -1,0 +1,63 @@
+<mat-tab-group (selectedTabChange)="changeTab($event)">
+  <!-- Tabs for each lab -->
+  <mat-tab *ngFor="let lab of labs" [label]="lab.name">
+    <div class="tab-content">
+      <h2>{{ lab.name }}</h2>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let booking of bookingList.get(lab.name)">
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ booking.startTime }} - {{ booking.endTime }} </mat-panel-title>
+            <mat-panel-description> {{ booking.reason }} </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="booking-content">
+            <!-- Name input -->
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Your name" [(ngModel)]="booking.name">
+            </mat-form-field><br>
+
+            <!-- Reason input -->
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Reason" minRows="6" [(ngModel)]="booking.reason"></textarea>
+            </mat-form-field><br>
+
+            <mat-grid-list cols="3" rowHeight="100">
+              <mat-grid-tile>
+                <!-- Lab name -->
+                <mat-form-field>
+                  <mat-select [(value)]="booking.labId">
+                    <mat-option *ngFor="let lab of labs" [value]="lab.name">{{ lab.name }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <!-- Start time input -->
+                <mat-form-field>
+                  <input matInput type="time" placeholder="From" [(ngModel)]="booking.startTime">
+                </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <!-- End time input -->
+                <mat-form-field>
+                  <input matInput type="time" placeholder="To" [(ngModel)]="booking.endTime">
+                </mat-form-field><br>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+          </div>
+
+          <!-- Buttons -->
+          <button mat-raised-button color="primary" (click)="saveBooking(booking)">Save</button>
+          <button mat-raised-button color="warn" (click)="deleteBooking(booking)">Delete</button>
+
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    </div>
+
+
+
+  </mat-tab>
+</mat-tab-group>

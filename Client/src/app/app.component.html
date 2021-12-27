@@ -1,0 +1,43 @@
+<!-- Top bar -->
+<mat-toolbar >  
+    <mat-toolbar-row>
+
+        <span>
+            <button mat-icon-button> <mat-icon class="app-icon">account_balance</mat-icon></button>
+                <span>Lab Booking System</span>
+            </span>
+            <div>
+                <span class="login-name">{{ username }}</span>
+                <button mat-icon-button> <mat-icon>arrow_drop_down</mat-icon></button>
+                <!-- <button mat-stroked-button color="primary" >Logout</button>
+                <button mat-button color="primary">Primary</button>
+                <button mat-raised-button color="primary"></button> -->
+            </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Content Body -->
+<mat-drawer-container>
+    <!-- Sidebar -->
+    <mat-drawer mode="side" opened>
+            <mat-calendar [selected]="bookings.selectedDatePicker" (selectedChange)="bookings.changeDate('input', $event); bookings.refreshBookingList($event)"> </mat-calendar>     
+    
+            <button class="download-button" mat-stroked-button color="primary"  (click)="bookings.downloadReport()">Generate Report</button>
+
+
+        </mat-drawer>
+
+    <!-- Content -->
+    <mat-drawer-content>
+        <app-bookings #bookings></app-bookings>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+<!-- Add button -->
+<span class="add-button">
+    <button mat-fab color="warn" (click)="bookings.addNewBooking()">
+        <mat-icon>add</mat-icon>
+    </button>
+</span>
+    

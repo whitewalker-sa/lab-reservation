@@ -1,0 +1,63 @@
+mat-toolbar {
+    margin: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: #4285F4;
+    color: white;
+}
+
+mat-toolbar-row {
+    justify-content: space-between;
+}
+
+
+mat-drawer-container {
+    background-color: #ECEFF1;
+    padding: 0px;
+    min-height: 100vh;
+}
+
+mat-drawer {
+    // background-color:#CFD8DC;
+    background-color:white;
+    padding: 20px;
+    align-items: center;
+    width: 275px;
+}
+
+mat-drawer-content {
+    padding: 0px;
+    padding-top: 0px;
+}
+
+.custom-button{
+    position: absolute;
+    right: 30px;
+    bottom: 50px;
+    z-index: 1;
+}
+  
+
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    z-index: 5;
+}
+
+.app-icon {
+    margin-top: -5px;
+    margin-right: 3px;
+}
+
+.download-button {
+    margin-bottom: 10px;
+    margin-top: 300px;
+    margin-left: 40px;
+}
+
+.login-name {
+    font-size: 15px;
+    font-weight: 400;
+}
